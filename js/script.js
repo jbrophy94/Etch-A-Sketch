@@ -25,5 +25,26 @@ function generateGrid(dimension) {
   }
 }
 
-//Call generateGrid with 16x16 to start
+//function to clear the grid
+function clearGrid() {
+  for (row of document.querySelectorAll("row")) {
+    row.remove();
+  }
+}
+
+//Function to toggle on magenta-class
+function toggleMagenta(target) {
+  target.classList.toggle("magenta-class");
+}
+
+//add event listener to grid. Use event propagation/delegation
+gridContainer.addEventListener("mouseover", function (e) {
+  const target = e.target;
+  if ([...target.classList].includes("square")) toggleMagenta(target);
+});
+
+//add event listener to clear button:
+clearBtn.addEventListener("click", clearGrid);
+
+//Call generateGrid with 16x16 to start before any buttons are clicked.
 generateGrid(16);
