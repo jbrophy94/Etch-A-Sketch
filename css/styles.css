@@ -1,0 +1,63 @@
+.top-btn {
+  margin-bottom: 30px;
+  background-color: purple;
+  color: white;
+  border: 5px solid white;
+  border-radius: 12px;
+  height: 40px;
+  aspect-ratio: 7;
+  font-size: 24px;
+}
+
+.top-btn:hover {
+  background-color: aqua;
+  color: darkblue;
+  border-color: maroon;
+}
+
+.top-btn:active {
+  background-color: black;
+  color: white;
+  border-color: gold;
+}
+
+.row {
+  display: flex;
+  gap: 2px;
+}
+
+.square,
+.generated {
+  background-color: aqua;
+  min-height: 10px;
+  min-width: 10px;
+  padding: 0px;
+  margin: 0px;
+  flex: 1;
+  border: 1px solid white;
+}
+
+.grid-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  flex: 1;
+}
+
+.row {
+  flex: 1;
+}
+
+.magenta-class {
+  background-color: magenta;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: azure;
+}
