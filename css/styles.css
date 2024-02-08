@@ -4,16 +4,43 @@
 
 body {
   background-color: azure;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main-title {
+  font-family: sans-serif;
+  color: #696969;
+  margin-bottom: 5px;
+  padding: 0;
 }
 
 .container {
   display: flex;
   flex: column;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .btn-container {
   display: flex;
   flex: 1;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  margin-top: 25px;
+  width: 700px;
+}
+
+.btn-container button {
+  color: azure;
+  background-color: magenta;
+  width: 325px;
+  aspect-ratio: 4;
+  border: 3px solid white;
+  border-radius: 12px;
+  font-size: 32px;
 }
 
 .grid-container {
@@ -27,6 +54,9 @@ body {
 
   background-color: aqua;
   border: whitesmoke;
+
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .row {

@@ -5,6 +5,7 @@
 const gridContainer = document.querySelector(".grid-container");
 const clearBtn = document.querySelector(".clear-btn");
 const customBtn = document.querySelector(".customize-btn");
+const html = document.querySelector("html");
 
 //Function to generate dimension x dimension grid
 function generateGrid(dimension) {
@@ -34,8 +35,25 @@ function clearGrid() {
 
 //Function to toggle on magenta-class
 function toggleMagenta(target) {
-  target.classList.toggle("magenta-class");
+  if (![...html.classList].includes("postpone")) {
+    target.classList.toggle("magenta-class");
+  }
 }
+
+//Add event listeners to the html element to allow for
+//state change in order to make gaps in the etch-a-sketch drawing
+function togglePostpone() {
+  html.classList.toggle("postpone");
+  console.log(html.classList);
+}
+
+html.addEventListener("mousedown", function () {
+  togglePostpone();
+});
+
+html.addEventListener("mouseup", function () {
+  togglePostpone();
+});
 
 //add event listener to grid. Use event propagation/delegation
 gridContainer.addEventListener("mouseover", function (e) {
