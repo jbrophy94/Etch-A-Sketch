@@ -20,7 +20,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  gap: 10px;
+  gap: 1px;
 
   width: 960px;
   height: 960px;
@@ -34,7 +34,7 @@ body {
 
   display: flex;
   align-items: stretch;
-  gap: 10px;
+  gap: 1px;
 }
 
 .square {

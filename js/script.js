@@ -27,7 +27,7 @@ function generateGrid(dimension) {
 
 //function to clear the grid
 function clearGrid() {
-  for (row of document.querySelectorAll("row")) {
+  for (let row of document.querySelectorAll(".row")) {
     row.remove();
   }
 }
@@ -45,6 +45,37 @@ gridContainer.addEventListener("mouseover", function (e) {
 
 //add event listener to clear button:
 clearBtn.addEventListener("click", clearGrid);
+
+//For custom grid button event listener
+function generateCustomGrid() {
+  //get and validate user input
+  let keepGoing = true;
+  let dimension;
+
+  while (keepGoing === true) {
+    const rawText = prompt(
+      "What dimension do you want your square grid to use (max 100, only integers)?"
+    );
+    let placeHolder = parseInt(rawText);
+
+    if (isNaN(placeHolder)) alert("Invalid input. Please enter an integer");
+    else if (placeHolder > 100) {
+      alert("Sorry, needs to be 100 or lower.");
+    } else {
+      dimension = placeHolder;
+      keepGoing = false;
+    }
+    console.log(dimension);
+  }
+
+  //clear old grid
+  clearGrid();
+
+  //Generate grid
+  generateGrid(dimension);
+}
+
+customBtn.addEventListener("click", generateCustomGrid);
 
 //Call generateGrid with 16x16 to start before any buttons are clicked.
 generateGrid(16);
